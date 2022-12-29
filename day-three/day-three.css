@@ -1,0 +1,22 @@
+:root {
+    --base: #ffc600;
+    --spacing: 10px;
+    --blur: 10px;
+}
+body {
+    min-height: 100vh;
+    background-color: skyblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+img {
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+    width: 50%;
+    height: 500px;
+}
+.hl {
+    color: var(--base);
+}
