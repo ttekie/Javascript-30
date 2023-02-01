@@ -50,7 +50,6 @@ function displayMatches() {
     
 }
 
-
 // select the DOM element node and store the object representation
 // of that element in a variable
 let searchInput = document.querySelector('.search');
