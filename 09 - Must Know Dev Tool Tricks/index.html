@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <p class="intro">whatever it contains</p>
+   <div id="avatar"></div>
+   <script>
+      const dogs = [{name: 'Snickers', age: 10}, {name: 'hugo', age: 6}];
+      const p = document.querySelector('.intro');
+      const div = document.querySelector('#avatar');
+      makeGreen();
+      function makeGreen() {
+        p.style.cssText = "color: green; font-size: 50px;";
+      }
+
+      // Regular 
+      console.log('hello');
+
+      // Interpolated
+      console.log('Hello I am as string!', 'woohoo');
+
+      // styled
+      console.log('%c this is great, is in it', 'font-size: 40px;');
+
+      // clear
+      console.clear();
+
+      // Grouping together
+      dogs.forEach(dog => {
+         console.group(`${dog.name}`);
+         console.log(`${dog.name}`);
+         console.log(`${dog.name} is ${dog.age} years old`);
+         console.groupEnd(`${dog.name}`);
+      })
+
+      // counting
+      console.count('tesfalem')
+      console.count('tesfalem')
+      console.count('tesfalem')
+      console.count('tesfalem')
+      console.count('tesfalem')
+
+
+      // timing
+      console.time('fetching data');
+      fetch('https://api.github.com/users/ttekie')
+      .then(data => data.json())
+      .then(data => {
+         console.timeEnd('fetching data');
+         console.log(data);
+         // just messed up a bit with incoming data
+         // div.innerHTML = `<a href="${data.url}">${data.url}<a/>`; 
+      })
+
+      console.table(dogs);
+    
+   </script>
+</body>
+</html>
